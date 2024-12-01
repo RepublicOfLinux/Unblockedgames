@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unblocked Games</title>
-    <style [A](https://github.com/theos/theos.dev?copilot_analytics_metadata=eyJldmVudEluZm9fbWVzc2FnZUlkIjoiYnZuQjQydHJMaUJuOU1XbTF4ckFNIiwiZXZlbnRJbmZvX2NsaWNrU291cmNlIjoiY2l0YXRpb25MaW5rIiwiZXZlbnRJbmZvX2NvbnZlcnNhdGlvbklkIjoidVQ5V1BEVHZEaTFEdzJOdXRnbVRuIiwiZXZlbnRJbmZvX2NsaWNrRGVzdGluYXRpb24iOiJodHRwczpcL1wvZ2l0aHViLmNvbVwvdGhlb3NcL3RoZW9zLmRldiJ9&citationMarker=9F742443-6C92-4C44-BF58-8F5A7C53B6F1)>
+    <title>Apple iBook G4</title>
+    <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             margin: 0;
             background: linear-gradient(135deg, #2d2d2d, #000000);
             color: #ffffff;
@@ -26,9 +25,15 @@
             flex-direction: column;
             align-items: center;
             width: 90%;
-            max-width: 1000px;
+            max-width: 1200px;
             margin-top: 50px;
             animation: fadeIn 1.5s ease-in-out;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .group {
@@ -37,7 +42,7 @@
             align-items: center;
             justify-content: center;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 20px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
             margin-bottom: 50px;
@@ -54,66 +59,108 @@
         }
 
         .title {
-            font-size: 36px;
+            font-size: 2rem;
             margin-bottom: 20px;
-        }
-
-        .game-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            width: 100%;
-        }
-
-        .game {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             text-align: center;
-            cursor: pointer;
-            transition: background 0.3s, box-shadow 0.3s, transform 0.3s ease-in-out;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .game:hover {
-            background: rgba(255, 255, 256, 0.3);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-            transform: scale(1.1);
-        }
-
-        .game span {
-            font-size: 18px;
-            color: #ffffff;
-        }
-
-        .game span.emoji {
-            font-size: 36px;
-            margin-bottom: 10px;
+        .content {
+            text-align: center;
+            font-size: 1rem;
+            max-width: 800px;
         }
 
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        .scroll-animation {
+            transform: translateZ(0);
+            animation: scrollAnimation 20s infinite linear;
+        }
+
+        @keyframes scrollAnimation {
+            0% {
+                transform: translateZ(0) rotateY(0);
+            }
+            100% {
+                transform: translateZ(0) rotateY(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+
+            .content {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .title {
+                font-size: 1.2rem;
+            }
+
+            .content {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="group" id="games">
-            <div class="title">Unblocked Games</div>
-            <div class="game-list">
-                <!-- Add games here -->
-                <a href="https://theos.dev/" class="game">
-                    <span class="emoji">🎮</span>
-                    <span>Theos Game</span>
-                </a>
-                <!-- Add more games as needed -->
+        <div class="group" id="header">
+            <div class="title">Apple iBook G4</div>
+            <div class="content">
+                The Apple iBook G4 was a line of laptop computers made by Apple Inc. between October 2003 and May 2006. Known for its durable design and powerful performance, the iBook G4 became a favorite among students and professionals.
             </div>
+        </div>
+        <div class="group scroll-animation" id="specifications">
+            <div class="title">Specifications</div>
+            <div class="content">
+                <ul>
+                    <li>Processor: PowerPC G4</li>
+                    <li>Display: 12.1" or 14.1" TFT</li>
+                    <li>Memory: 256MB, expandable to 1.25GB</li>
+                    <li>Storage: 30GB, 40GB, 60GB or 80GB HDD</li>
+                    <li>Graphics: ATI Mobility Radeon 9200</li>
+                    <li>Operating System: macOS</li>
+                </ul>
+            </div>
+        </div>
+        <div class="group" id="features">
+            <div class="title">Features</div>
+            <div class="content">
+                <p>💻 Lightweight and portable</p>
+                <p>🔋 Long battery life</p>
+                <p>🎨 Sleek design</p>
+                <p>🔧 Easy to upgrade</p>
+            </div>
+        </div>
+        <div class="group" id="gallery">
+            <div class="title">Gallery</div>
+            <div class="content">
+                <!-- Add images of the iBook G4 here -->
+                <img src="your-image1-url.jpg" alt="iBook G4 image 1" style="border-radius: 10px; width: 100%; margin-bottom: 20px;">
+                <img src="your-image2-url.jpg" alt="iBook G4 image 2" style="border-radius: 10px; width: 100%; margin-bottom: 20px;">
+                <img src="your-image3-url.jpg" alt="iBook G4 image 3" style="border-radius: 10px; width: 100%;">
+            </div>
+        </div>
+        <div class="group" id="footer">
+            <div class="content">© 2023 Apple iBook G4. All rights reserved.</div>
         </div>
     </div>
 
