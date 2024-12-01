@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblocked Games</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background: linear-gradient(135deg, #2d2d2d, #000000);
+            color: #ffffff;
+            overflow-x: hidden;
+            overflow-y: auto;
+            height: 100vh;
+            scroll-behavior: smooth;
+            perspective: 1000px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 50px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 50px;
+            transition: background 0.5s, box-shadow 0.5s, transform 0.5s, opacity 0.5s;
+            opacity: 0;
+            transform: translateY(100px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .group.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .title {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .game-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .game {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s, transform 0.3s ease-in-out;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .game:hover {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+            transform: scale(1.1);
+        }
+
+        .game span {
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .game span.emoji {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="group" id="games">
+            <div class="title">Unblocked Games</div>
+            <div class="game-list">
+                <!-- Add games here -->
+                <a href="https://github.com/Mr-milky-way/HTML-games/blob/main/Doodle%20Jump.html" class="game">
+                    <span class="emoji">🎮</span>
+                    <span>Game 1</span>
+                </a>
+                <a href="path/to/game2.html" class="game">
+                    <span class="emoji">🕹️</span>
+                    <span>Game 2</span>
+                </a>
+                <a href="path/to/game3.html" class="game">
+                    <span class="emoji">🏆</span>
+                    <span>Game 3</span>
+                </a>
+                <!-- Add more games as needed -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+        });
+
+        function handleScroll() {
+            const groups = document.querySelectorAll('.group');
+            groups.forEach(group => {
+                const groupTop = group.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (groupTop < windowHeight) {
+                    group.classList.add('show');
+                } else {
+                    group.classList.remove('show');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
